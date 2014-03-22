@@ -1,0 +1,37 @@
+﻿@model IEnumerable<FinalProject_ITC172.Models.DonorEmails>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<p>Here are our Donors</p>
+<table>
+<thead>
+    <tr>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>Email</th>
+        <th>DonationAmount</th>
+        <th>DonationDate</th>
+    </tr>
+</thead>
+    <tbody>
+        @foreach (var item in Model) //have to do @ to tell Razor you're in C#
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.LastName)</td>
+                <td>@Html.DisplayFor(modelItem => item.FirstName)</td> 
+                <td>@Html.DisplayFor(modelItem => item.Email)</td> 
+                <td>@Html.DisplayFor(modelItem => item.DonationAmount)</td> 
+                <td>@Html.DisplayFor(modelItem => item.DonationDate)</td> 
+            </tr>
+        }
+    </tbody>
+
+</table>
